@@ -1,7 +1,8 @@
+  # When running this workflow manually, select the 'main' branch in the GitHub Actions UI.
 name: Terraform AWS Destroy
 
 on:
-  push:
+  workflow_dispatch:
     branches:
       - main
 
