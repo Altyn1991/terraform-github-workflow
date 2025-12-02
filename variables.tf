@@ -1,3 +1,17 @@
+variable "s3_backend_bucket" {
+  description = "The name of the S3 bucket for Terraform remote state."
+  type        = string
+}
+
+variable "s3_backend_key" {
+  description = "The path/key in the S3 bucket for the state file."
+  type        = string
+}
+
+variable "s3_backend_region" {
+  description = "The AWS region for the S3 backend."
+  type        = string
+}
 variable "region" {
   description = "AWS region to deploy resources in"
   type        = string

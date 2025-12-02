@@ -1,3 +1,10 @@
+terraform {
+  backend "s3" {
+    bucket = var.s3_backend_bucket
+    key    = var.s3_backend_key
+    region = var.s3_backend_region
+  }
+}
 provider "aws" {
   region = "us-east-1" # Change to your preferred region
 }
@@ -50,6 +57,6 @@ resource "aws_instance" "example" {
 }
 
 resource "aws_iam_instance_profile" "example" {
-  name = "example-instance-profile"
+  name = "example-ec2-role"
   role = aws_iam_role.example.name
 }
